@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# aLT-tab
 
-## Getting Started
+**Open source, privacy first, cookieless web analytics.**
 
-First, run the development server:
+aLT-tab is a lightweight, self hostable alternative to Google Analytics. No cookies, no localStorage, no personal data collection; Just the metrics that matter: page views, referrers, device types, and screen sizes.
+
+Deploy your own free instance in one click, or use our upcoming hosted plan if you'd rather not manage a server yourself.
+
+## ✨ Features
+
+- **No cookies. No PII.** Fully compliant with privacy expectations by design, not by policy.
+- **Under 5KB tracker script** — won't slow down the sites using it.
+- **Self-hostable for free** using Netlify + Supabase's free tiers.
+- **Clean, modern dashboard** — visitors, top pages, referrers, device breakdown.
+- **100% open source core**, forever.
+
+## 🚀 Deploy Your Own Instance
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yazhnar/Alt-Tab)
+
+Click the button above, connect your GitHub account, and Netlify will guide you through setting up your own free instance. You'll need a free [Supabase](https://supabase.com) account for the database — setup instructions below.
+
+## 🛠️ Local Development
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/yazhnar/Alt-Tab.git
+cd Alt-Tab
+npm install
+```
+
+Copy the example environment file and fill in your own Supabase credentials:
+
+```bash
+cp .env.example .env.local
+```
+
+Run the local development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to view it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS
+- **Database:** Supabase (Postgres)
+- **Hosting:** Netlify
 
-## Learn More
+## 💛 Support This Project
 
-To learn more about Next.js, take a look at the following resources:
+aLT-tab is free and open source. If it's useful to you, consider supporting its development:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- GitHub Sponsors — *(coming soon)*
+- Buy Me a Coffee — *(coming soon)*
+- Open Collective — *(coming soon)*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Don't want to self-host? A hosted version is coming soon for **$5/month** — zero setup, fully managed.
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
