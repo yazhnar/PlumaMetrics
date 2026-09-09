@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d1210;
+  --panel: #131a17;
+  --panel-border: #1f2b26;
+  --primary: #39ff14;
+  --primary-dim: #1f8f0c;
+  --error: #ff2e4d;
+  --text: #d6e8dc;
+  --text-muted: #5c7a6b;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-panel: var(--panel);
+  --color-panel-border: var(--panel-border);
+  --color-primary: var(--primary);
+  --color-primary-dim: var(--primary-dim);
+  --color-error: var(--error);
+  --color-foreground: var(--text);
+  --color-muted: var(--text-muted);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Subtle scanline texture — very low opacity, purely atmospheric */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(57, 255, 20, 0.015),
+    rgba(57, 255, 20, 0.015) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+/* Respect reduced-motion preferences: strip the scanline effect entirely */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    display: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+::selection {
+  background: var(--primary-dim);
+  color: var(--background);
 }
