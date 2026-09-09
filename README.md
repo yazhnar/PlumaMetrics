@@ -77,19 +77,9 @@ Once your instance is deployed, add this one line to any page you want to track,
 
 That's it, no cookie banners, no configuration, no external dependencies.
 
-## 🔓 Status Code Tracking (Optional)
+## 🔓 Metrics Pro
 
-By default, PlumaMetrics automatically detects 404 pages with no setup required. If you'd like precise status codes (403, 500, etc.) tracked too, add one of the following to your error pages:
-
-**Option 1: meta tag:**
-```html
-<meta name="pluma-status" content="500">
-```
-
-**Option 2: JavaScript variable, set before the tracker script loads:**
-```html
-<script>window.__PLUMA_STATUS = 500;</script>
-```
+By default, PlumaMetrics automatically detects 404 pages with no setup required. **Metrics Pro** ($5/mo) unlocks precise status codes (403, 500, etc.), outbound link tracking, and OS-level device breakdowns. Setup instructions are provided after subscribing — see the dashboard for details.
 
 ## 🛠️ Local Development
 
