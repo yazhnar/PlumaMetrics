@@ -28,6 +28,7 @@ export async function POST(request: NextRequest) {
       referrer: body.referrer,
       device_type: body.device_type,
       browser: body.browser,
+      os: body.os,
       screen_width: body.screen_width,
       is_404: body.is_404,
       status_code: body.status_code,

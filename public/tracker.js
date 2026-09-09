@@ -55,6 +55,17 @@
     return 'Other';
   }
 
+    // ---- OS DETECTION (Metrics Pro feature) ----
+  function getOS() {
+    var ua = navigator.userAgent;
+    if (/android/i.test(ua)) return 'Android';
+    if (/iphone|ipad|ipod/i.test(ua)) return 'iOS';
+    if (/mac os x/i.test(ua)) return 'macOS';
+    if (/windows/i.test(ua)) return 'Windows';
+    if (/linux/i.test(ua)) return 'Linux';
+    return 'Other';
+  }
+
   // ---- REFERRER (just the domain, not the full URL) ----
   function getReferrerDomain() {
     if (!document.referrer) return null;
@@ -73,6 +84,18 @@
     referrer: getReferrerDomain(),
     device_type: getDeviceType(),
     browser: getBrowser(),
+    screen_width: window.innerWidth,
+    is_404: detectIs404(),
+    status_code: detectStatusCode()
+  };
+
+    var payload = {
+    site_id: SITE_ID,
+    path: window.location.pathname,
+    referrer: getReferrerDomain(),
+    device_type: getDeviceType(),
+    browser: getBrowser(),
+    os: getOS(),
     screen_width: window.innerWidth,
     is_404: detectIs404(),
     status_code: detectStatusCode()
