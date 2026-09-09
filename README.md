@@ -75,18 +75,18 @@ Once your instance is deployed, add this one line to any page you want to track,
 <script src="https://your-site.com/tracker.js" data-site-id="my-site"></script>
 ```
 
-That's it — no cookie banners, no configuration, no external dependencies.
+That's it, no cookie banners, no configuration, no external dependencies.
 
 ## 🔓 Status Code Tracking (Optional)
 
 By default, PlumaMetrics automatically detects 404 pages with no setup required. If you'd like precise status codes (403, 500, etc.) tracked too, add one of the following to your error pages:
 
-**Option 1 — meta tag:**
+**Option 1: meta tag:**
 ```html
 <meta name="pluma-status" content="500">
 ```
 
-**Option 2 — JavaScript variable, set before the tracker script loads:**
+**Option 2: JavaScript variable, set before the tracker script loads:**
 ```html
 <script>window.__PLUMA_STATUS = 500;</script>
 ```
@@ -121,11 +121,11 @@ Visit [http://localhost:3000](http://localhost:3000) to view it.
 
 PlumaMetrics is free and open source. If it's useful to you, consider supporting its development:
 
-- GitHub Sponsors — *(coming soon)*
-- Buy Me a Coffee — *(coming soon)*
-- Open Collective — *(coming soon)*
+- GitHub Sponsors ~ *(coming soon)*
+- Buy Me a Coffee ~ *(coming soon)*
+- Open Collective ~ *(coming soon)*
 
-Don't want to self-host? A hosted version is coming soon for **$5/month** — zero setup, fully managed. [Join the waitlist](#) to get notified.
+Don't want to self-host? A hosted version is coming soon for **$5/month** ~ zero setup, fully managed. [Join the waitlist](#) to get notified.
 
 ## 📄 License
 
