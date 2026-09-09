@@ -1,16 +1,17 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
+import TrafficChart from './traffic-chart';
 
 async function getDashboardData(siteId: string) {
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
 
   const { data: events, error } = await supabaseAdmin
     .from('events')
-    .select('path, is_404, visitor_hash')
+    .select('path, is_404, visitor_hash, created_at')
     .eq('site_id', siteId)
     .gte('created_at', twentyFourHoursAgo);
 
   if (error || !events) {
-    return { totalVisitors: 0, uniqueVisitors: 0, topPage: '—', errorCount: 0 };
+    return { totalVisitors: 0, uniqueVisitors: 0, topPage: '—', errorCount: 0, hourlyData: [] };
   }
 
   const totalVisitors = events.length;
@@ -25,12 +26,28 @@ async function getDashboardData(siteId: string) {
 
   const errorCount = events.filter((e) => e.is_404).length;
 
-  return { totalVisitors, uniqueVisitors, topPage, errorCount };
+  const hourlyBuckets: Record<string, number> = {};
+  for (let i = 23; i >= 0; i--) {
+    const hourLabel = new Date(Date.now() - i * 60 * 60 * 1000).getHours();
+    hourlyBuckets[`${hourLabel}:00`] = 0;
+  }
+  events.forEach((e) => {
+    const hourLabel = `${new Date(e.created_at).getHours()}:00`;
+    if (hourLabel in hourlyBuckets) {
+      hourlyBuckets[hourLabel] += 1;
+    }
+  });
+  const hourlyData = Object.entries(hourlyBuckets).map(([hour, count]) => ({
+    hour,
+    visitors: count,
+  }));
+
+  return { totalVisitors, uniqueVisitors, topPage, errorCount, hourlyData };
 }
 
 export default async function OverviewPage() {
   const SITE_ID = 'my-test-blog';
-  const { totalVisitors, uniqueVisitors, topPage, errorCount } =
+  const { totalVisitors, uniqueVisitors, topPage, errorCount, hourlyData } =
     await getDashboardData(SITE_ID);
 
   return (
@@ -43,6 +60,8 @@ export default async function OverviewPage() {
           {totalVisitors.toLocaleString()}
         </div>
       </div>
+
+      <TrafficChart data={hourlyData} />
 
       <div className="grid grid-cols-3 gap-4">
         <div className="bg-panel border border-panel-border rounded p-4">

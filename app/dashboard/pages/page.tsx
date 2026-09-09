@@ -39,7 +39,6 @@ export default async function PagesPage() {
               <span className="text-foreground font-bold">{p.path}</span>
               <span className="text-primary font-bold">{p.count}</span>
             </div>
-            {/* Simple bar showing relative traffic share */}
             <div className="h-1 bg-background rounded overflow-hidden">
               <div
                 className="h-full bg-primary-dim"
