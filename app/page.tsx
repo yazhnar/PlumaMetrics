@@ -1,3 +1,5 @@
+import WaitlistForm from './waitlist-form';
+
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center justify-center p-8">
@@ -14,6 +16,12 @@ export default function Home() {
           <span className="inline-block px-4 py-2 border border-panel-border rounded text-sm text-muted">
             $ dashboard coming next
           </span>
+        </div>
+        <div className="pt-6">
+          <p className="text-muted text-sm mb-3">
+            Want zero-setup hosting instead? Join the waitlist:
+          </p>
+          <WaitlistForm />
         </div>
       </div>
     </main>
