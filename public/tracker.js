@@ -4,7 +4,7 @@
   // ---- CONFIG ----
   // This should point to wherever your PlumaMetrics instance is hosted.
   // For local testing, this points to your local dev server.
-  var ENDPOINT = 'http://localhost:3000/api/track';
+  var ENDPOINT = window.location.origin + '/api/track';
 
   // The site owner sets this when embedding the script (explained in the README).
   var SITE_ID = document.currentScript.getAttribute('data-site-id') || 'unknown';
