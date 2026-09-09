@@ -1,5 +1,6 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
 import TrafficChart from './traffic-chart';
+import StatusCodesPanel from './status-codes-panel';
 
 async function getDashboardData(siteId: string) {
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
@@ -44,11 +45,38 @@ async function getDashboardData(siteId: string) {
 
   return { totalVisitors, uniqueVisitors, topPage, errorCount, hourlyData };
 }
+async function getStatusCodeData(siteId: string) {
+  const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+
+  const { data: events, error } = await supabaseAdmin
+    .from('events')
+    .select('status_code')
+    .eq('site_id', siteId)
+    .gte('created_at', twentyFourHoursAgo)
+    .not('status_code', 'is', null);
+
+  if (error || !events || events.length === 0) {
+    return { hasData: false, codes: [] };
+  }
+
+  const codeCounts: Record<string, number> = {};
+  events.forEach((e) => {
+    const key = String(e.status_code);
+    codeCounts[key] = (codeCounts[key] || 0) + 1;
+  });
+
+  const codes = Object.entries(codeCounts)
+    .map(([code, count]) => ({ code, count }))
+    .sort((a, b) => b.count - a.count);
+
+  return { hasData: true, codes };
+}
 
 export default async function OverviewPage() {
   const SITE_ID = 'my-test-blog';
   const { totalVisitors, uniqueVisitors, topPage, errorCount, hourlyData } =
     await getDashboardData(SITE_ID);
+      const statusCodeData = await getStatusCodeData(SITE_ID);
 
   return (
     <>
@@ -79,6 +107,7 @@ export default async function OverviewPage() {
           <div className="text-2xl font-bold text-error">{errorCount}</div>
         </div>
       </div>
+            <StatusCodesPanel data={statusCodeData} />
     </>
   );
 }
