@@ -115,4 +115,50 @@
       keepalive: true
     });
   }
+
+    // ---- OUTBOUND LINK TRACKING (Metrics Pro feature) ----
+  function trackOutboundClicks() {
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a');
+      if (!link || !link.href) return;
+
+      var linkUrl;
+      try {
+        linkUrl = new URL(link.href);
+      } catch (e) {
+        return;
+      }
+
+      // Only fire for links leaving the current domain
+      if (linkUrl.hostname === window.location.hostname) return;
+
+      var outboundPayload = {
+        site_id: SITE_ID,
+        path: window.location.pathname,
+        referrer: null,
+        device_type: getDeviceType(),
+        browser: getBrowser(),
+        os: getOS(),
+        screen_width: window.innerWidth,
+        is_404: false,
+        status_code: null,
+        is_outbound: true,
+        outbound_url: linkUrl.hostname
+      };
+
+      if (navigator.sendBeacon) {
+        var blob = new Blob([JSON.stringify(outboundPayload)], { type: 'application/json' });
+        navigator.sendBeacon(ENDPOINT, blob);
+      } else {
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(outboundPayload),
+          keepalive: true
+        });
+      }
+    });
+  }
+
+  trackOutboundClicks();
 })();

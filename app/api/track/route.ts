@@ -32,6 +32,8 @@ export async function POST(request: NextRequest) {
       screen_width: body.screen_width,
       is_404: body.is_404,
       status_code: body.status_code,
+            is_outbound: body.is_outbound || false,
+      outbound_url: body.outbound_url,
       visitor_hash: visitorHash,
     });
 
