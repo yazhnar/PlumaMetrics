@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 // Replace with your actual email address
-const SUPPORT_EMAIL = '[YOUR_EMAIL_ADDRESS]';
+const SUPPORT_EMAIL = '4ftz8v3wd@mozmail.com';
 
 export default function ProofForm() {
   const [siteId, setSiteId] = useState('');
