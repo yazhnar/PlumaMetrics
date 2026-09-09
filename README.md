@@ -1,4 +1,4 @@
-# aLT-tab
+# PlumaMetrics
 
 **Open source, privacy first, cookieless web analytics.**
 
@@ -16,7 +16,7 @@ Deploy your own free instance in one click, or use our upcoming hosted plan if y
 
 ## 🚀 Deploy Your Own Instance
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yazhnar/Alt-Tab)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository==https://github.com/yazhnar/PlumaMetrics)
 
 Click the button above, connect your GitHub account, and Netlify will guide you through setting up your own free instance. You'll need a free [Supabase](https://supabase.com) account for the database — setup instructions below.
 
@@ -25,8 +25,8 @@ Click the button above, connect your GitHub account, and Netlify will guide you 
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/yazhnar/Alt-Tab.git
-cd Alt-Tab
+git clone https://github.com/yazhnar/PlumaMetrics.git
+cd PlumaMetrics
 npm install
 ```
 
