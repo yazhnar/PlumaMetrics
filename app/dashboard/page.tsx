@@ -2,6 +2,8 @@ import { supabaseAdmin } from '@/lib/supabase-admin';
 import TrafficChart from './traffic-chart';
 import StatusCodesPanel from './status-codes-panel';
 
+export const dynamic = 'force-dynamic';
+
 async function getDashboardData(siteId: string) {
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
 
