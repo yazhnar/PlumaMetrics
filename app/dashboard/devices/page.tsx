@@ -31,7 +31,7 @@ async function getDevicesData(siteId: string) {
 }
 
 export default async function DevicesPage() {
-  const SITE_ID = 'my-test-blog';
+  const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'default-site';
   const { devices, browsers } = await getDevicesData(SITE_ID);
   const maxDeviceCount = devices[0]?.count || 1;
   const maxBrowserCount = browsers[0]?.count || 1;

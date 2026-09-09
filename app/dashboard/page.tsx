@@ -73,7 +73,7 @@ async function getStatusCodeData(siteId: string) {
 }
 
 export default async function OverviewPage() {
-  const SITE_ID = 'my-test-blog';
+  const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'default-site';
   const { totalVisitors, uniqueVisitors, topPage, errorCount, hourlyData } =
     await getDashboardData(SITE_ID);
       const statusCodeData = await getStatusCodeData(SITE_ID);

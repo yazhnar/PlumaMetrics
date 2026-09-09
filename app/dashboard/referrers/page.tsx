@@ -23,7 +23,7 @@ async function getReferrersData(siteId: string) {
 }
 
 export default async function ReferrersPage() {
-  const SITE_ID = 'my-test-blog';
+  const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || 'default-site';
   const referrers = await getReferrersData(SITE_ID);
   const maxCount = referrers[0]?.count || 1;
 
