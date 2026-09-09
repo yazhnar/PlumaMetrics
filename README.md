@@ -2,7 +2,7 @@
 
 **Open source, privacy first, cookieless web analytics.**
 
-PlumaMetrics is a lightweight, self-hostable alternative to Google Analytics. No cookies, no localStorage, no personal data collection — just the metrics that matter: page views, referrers, device types, and screen sizes.
+PlumaMetrics is a lightweight, self hostable alternative to Google Analytics. No cookies, no localStorage, no personal data collection, just the metrics that matter: page views, referrers, device types, and screen sizes.
 
 Deploy your own free instance in one click, or use our upcoming hosted plan if you'd rather not manage a server yourself.
 
