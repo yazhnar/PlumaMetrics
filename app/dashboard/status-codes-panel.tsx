@@ -65,7 +65,7 @@ export default function StatusCodesPanel({ data }: { data: StatusCodeData }) {
             Add one line to your site to see 403s, 500s, and more.
           </div>
           <a
-            href="https://github.com/yazhnar/PlumaMetrics#status-code-tracking-optional"
+            href="https://github.com/yazhnar/PlumaMetrics#metrics-pro"
             className="text-sm border border-panel-border rounded px-4 py-2 text-primary hover:bg-panel"
           >
             $ view setup instructions
