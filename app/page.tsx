@@ -12,10 +12,16 @@ export default function Home() {
           <br />
           No cookies, no fingerprinting, no IP storage.
         </p>
-        <div className="pt-4">
-          <span className="inline-block px-4 py-2 border border-panel-border rounded text-sm text-muted">
-            $ dashboard coming next
-          </span>
+        <div className="pt-4 flex gap-3 justify-center">
+
+          <a href="/dashboard" 
+             className="inline-block px-4 py-2 border border-panel-border rounded text-sm text-primary hover:bg-panel transition-colors">
+             $ view dashboard
+          </a>
+          <a href="/support"
+             className="inline-block px-4 py-2 border border-panel-border rounded text-sm text-muted hover:text-foreground hover:bg-panel transition-colors">
+             $ support this project
+          </a>
         </div>
         <div className="pt-6">
           <p className="text-muted text-sm mb-3">
