@@ -18,7 +18,12 @@ export default function LiveVisitors({ siteId }: { siteId: string }) {
       setCount(recentCount || 0);
     }
 
-    checkRecent();
+  checkRecent();
+
+    const existingChannel = supabase.getChannels().find((c) => c.topic === 'realtime:live-events');
+    if (existingChannel) {
+      supabase.removeChannel(existingChannel);
+    }
 
     const channel = supabase
       .channel('live-events')
