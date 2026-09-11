@@ -64,6 +64,7 @@ Fill in the following values in `.env.local`:
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Your Supabase publishable key (safe for the browser) |
 | `SUPABASE_SECRET_KEY` | Your Supabase secret key (server-only, never exposed to visitors) |
 | `NEXT_PUBLIC_SITE_ID` | A name for your site, e.g. `my-blog` — shown on your dashboard and used to identify tracked events |
+| `PLUMA_API_KEY` | Returns JSON with stats |
 
 If deploying to Netlify, add these same four variables under **Site settings → Environment variables** in your Netlify dashboard.
 
@@ -80,6 +81,16 @@ That's it, no cookie banners, no configuration, no external dependencies.
 ## 🔓 Metrics Pro
 
 By default, PlumaMetrics automatically detects 404 pages with no setup required. **Metrics Pro** ($5/mo) unlocks precise status codes (403, 500, etc.), outbound link tracking, and OS-level device breakdowns. Setup instructions are provided after subscribing — see the dashboard for details.
+
+## 🔌 API Access
+
+Query your stats programmatically:
+
+```bash
+curl -H "x-api-key: YOUR_API_KEY" "https://your-site.com/api/stats?site_id=your-site-id"
+```
+
+Returns JSON with total visitors, unique visitors, top page, and 404 count for the last 24 hours. Set `PLUMA_API_KEY` in your environment variables to enable this, see the Environment Variables section above.
 
 ## 🛠️ Local Development
 
