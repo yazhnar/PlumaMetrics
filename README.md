@@ -92,13 +92,13 @@ Returns JSON with total visitors, unique visitors, top page, and 404 count for t
 
 These features are technically feasible but not yet built. Priority is decided by community interest. Upvote ideas in [Discussions](https://github.com/yazhnar/PlumaMetrics/discussions/categories/feature-requests) to help shape what comes next.
 
-- **Goals & custom events**: Track sign-ups, clicks, and other key actions beyond pageviews
-- **Email/Slack reports**: Periodic traffic summaries without logging in
-- **Uptime monitoring**: Get notified if your site goes down
-- **Funnels & user journeys**: See the paths visitors take before converting
-- **Revenue attribution**: Connect traffic sources to actual revenue
+- **Goals & Custom Events**: Track sign-ups, clicks, and other key actions beyond pageviews
+- **Email/Slack Reports**: Periodic traffic summaries without logging in
+- **Uptime Monitoring**: Get notified if your site goes down
+- **Funnels & User Journeys**: See the paths visitors take before converting
+- **Revenue Attribution**: Connect traffic sources to actual revenue
 
-Note: some of these (funnels, journeys, revenue attribution) would require a limited form of session tracking beyond our current daily-rotating visitor hash. We'll only build these if there's real demand, and we'll be transparent about any tradeoffs before we do.
+Note: some of these (funnels, journeys, revenue attribution) would require a limited form of session tracking beyond our current daily-rotating visitor hash. I'll only build these if there's real demand, and I'll be transparent about any tradeoffs before we do.
 
 ## 🛠️ Local Development
 
