@@ -5,6 +5,7 @@ export default function SupportPage() {
     <main className="flex-1 flex flex-col items-center p-8">
       <div className="max-w-lg w-full space-y-8 py-12">
         <div className="text-center space-y-2">
+                    <a href="/" className="text-muted text-sm hover:text-foreground transition-colors">← back to home</a>
           <h1 className="text-3xl font-bold text-primary tracking-tight">
             Support PlumaMetrics
           </h1>

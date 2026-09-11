@@ -9,7 +9,7 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen">
       <aside className="w-56 border-r border-panel-border p-6 flex flex-col gap-1">
-        <div className="text-primary font-bold mb-6">PlumaMetrics</div>
+      <a href="/" className="text-primary font-bold mb-6 block hover:opacity-80 transition-opacity">PlumaMetrics</a>
         <NavLinks />
       </aside>
       <main className="flex-1 p-8">
