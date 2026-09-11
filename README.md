@@ -21,6 +21,10 @@ Deploy your own free instance in one click, or use our upcoming hosted plan if y
 
 Click the button above, connect your GitHub account, and Netlify will guide you through setting up your own free instance. You'll need a free [Supabase](https://supabase.com) account for the database — full setup instructions below.
 
+### Our Architecture & Netlify Integration
+
+Because our ethos is 100% privacy focused, our tools rely entirely on client side processing (JAMstack architecture). This makes Netlify our perfect ecosystem. To support my non-technical community, every single one of our repositories features a 'Deploy to Netlify' blueprint button in the README right from launch day, enabling effortless, one click deployments.
+
 ## 🗄️ Setting Up Supabase
 
 1. Create a free account at [supabase.com](https://supabase.com) and start a new project.
