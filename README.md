@@ -78,10 +78,6 @@ Once your instance is deployed, add this one line to any page you want to track,
 
 That's it, no cookie banners, no configuration, no external dependencies.
 
-## 🔓 Metrics Pro
-
-By default, PlumaMetrics automatically detects 404 pages with no setup required. **Metrics Pro** ($5/mo) unlocks precise status codes (403, 500, etc.), outbound link tracking, and OS-level device breakdowns. Setup instructions are provided after subscribing — see the dashboard for details.
-
 ## 🔌 API Access
 
 Query your stats programmatically:
@@ -91,6 +87,18 @@ curl -H "x-api-key: YOUR_API_KEY" "https://your-site.com/api/stats?site_id=your-
 ```
 
 Returns JSON with total visitors, unique visitors, top page, and 404 count for the last 24 hours. Set `PLUMA_API_KEY` in your environment variables to enable this, see the Environment Variables section above.
+
+## 🗺️ Planned for v0.2 — Vote on What Ships Next
+
+These features are technically feasible but not yet built. Priority is decided by community interest — upvote ideas in [Discussions](https://github.com/yazhnar/PlumaMetrics/discussions/categories/feature-requests) to help shape what comes next.
+
+- **Goals & custom events** — track sign-ups, clicks, and other key actions beyond pageviews
+- **Email/Slack reports** — periodic traffic summaries without logging in
+- **Uptime monitoring** — get notified if your site goes down
+- **Funnels & user journeys** — see the paths visitors take before converting
+- **Revenue attribution** — connect traffic sources to actual revenue
+
+Note: some of these (funnels, journeys, revenue attribution) would require a limited form of session tracking beyond our current daily-rotating visitor hash. We'll only build these if there's real demand, and we'll be transparent about any tradeoffs before we do.
 
 ## 🛠️ Local Development
 
