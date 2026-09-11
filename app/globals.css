@@ -9,6 +9,7 @@
   --error: #ff2e4d;
   --text: #d6e8dc;
   --text-muted: #5c7a6b;
+  --info: #38bdf8;
 }
 
 @theme inline {
@@ -21,6 +22,7 @@
   --color-foreground: var(--text);
   --color-muted: var(--text-muted);
   --font-mono: var(--font-jetbrains-mono);
+  --color-info: var(--info);
 }
 
 body {

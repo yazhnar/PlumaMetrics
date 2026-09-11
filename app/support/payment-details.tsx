@@ -13,7 +13,7 @@ export default function PaymentDetails() {
           onClick={() => setRevealed(true)}
           className="border border-panel-border rounded px-4 py-2 text-sm text-primary hover:bg-background"
         >
-          $ show payment details
+          $ show support options
         </button>
       </div>
     );
