@@ -1,6 +1,7 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
 import TrafficChart from './traffic-chart';
 import StatusCodesPanel from './status-codes-panel';
+import LiveVisitors from './live-visitors';
 
 export const dynamic = 'force-dynamic';
 
@@ -82,7 +83,10 @@ export default async function OverviewPage() {
 
   return (
     <>
-      <div className="text-muted text-sm mb-8">$ site: {SITE_ID}</div>
+            <div className="text-muted text-sm mb-8">$ site: {SITE_ID}</div>
+      <div className="mb-4">
+        <LiveVisitors siteId={SITE_ID} />
+      </div>
 
       <div className="mb-10">
         <div className="text-muted text-sm mb-2">total_visitors --last-24h</div>
