@@ -1,4 +1,8 @@
 import WaitlistForm from './waitlist-form';
+export const metadata = {
+  title: 'PlumaMetrics — Privacy-First, Cookie-Less Web Analytics',
+  description: 'Open-source, self-hostable web analytics with no cookies, no fingerprinting, and no IP storage. A free alternative to Google Analytics, Plausible, and Fathom.',
+};
 
 export default function Home() {
   return (

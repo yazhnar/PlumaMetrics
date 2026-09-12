@@ -1,0 +1,26 @@
+# PlumaMetrics
+
+> Open source, privacy first, cookieless web analytics. A self hostable alternative to Google Analytics, Plausible, and Fathom; With no cookies, no localStorage, no personal data collection, and no IP storage.
+
+PlumaMetrics is a lightweight (under 5KB) tracking script paired with a Next.js dashboard, deployable for free on Netlify with a Supabase database. It uses a daily rotating, one way hashed visitor identifier instead of cookies or persistent fingerprints, so it can report unique visitors without ever being able to track a specific person over time.
+
+## Key facts
+
+- 100% free and open source (MIT license), self hosted forever
+- No cookies, no consent banner required
+- Tracker script is under 5KB
+- Tracks: page views, referrers, device type, browser, operating system, screen width, automatic 404 detection, outbound link clicks
+- Real time visitor count
+- REST API for programmatic access to stats
+- Built with Next.js, Tailwind CSS, Supabase, deployed on Netlify
+
+## Links
+
+- Homepage: https://plumametrics.netlify.app
+- Source code: https://github.com/yazhnar/PlumaMetrics
+- Support the project: https://plumametrics.netlify.app/support
+- Feature requests: https://github.com/yazhnar/PlumaMetrics/discussions/categories/feature-requests
+
+## Comparison
+
+Unlike Google Analytics, PlumaMetrics collects no personal data and requires no cookie consent banner. Unlike Plausible ($9/mo) and Fathom ($15/mo), PlumaMetrics is free to self host with no pageview limits.

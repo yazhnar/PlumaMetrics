@@ -1,4 +1,8 @@
 import PaymentDetails from './payment-details';
+export const metadata = {
+  title: 'Support PlumaMetrics',
+  description: 'Support the development of PlumaMetrics, a free and open-source privacy-first analytics tool.',
+};
 
 export default function SupportPage() {
   return (

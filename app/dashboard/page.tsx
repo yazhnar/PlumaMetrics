@@ -2,6 +2,10 @@ import { supabaseAdmin } from '@/lib/supabase-admin';
 import TrafficChart from './traffic-chart';
 import StatusCodesPanel from './status-codes-panel';
 import LiveVisitors from './live-visitors';
+export const metadata = {
+  title: 'Dashboard — PlumaMetrics',
+  description: 'View your website traffic, visitors, and referrers in real time — privacy-first, no cookies.',
+};
 
 export const dynamic = 'force-dynamic';
 
