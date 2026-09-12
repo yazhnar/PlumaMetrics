@@ -43,7 +43,7 @@ PlumaMetrics uses a different approach: each visit is hashed from the visitor's 
 - Automatically rotates every 24 hours, so no one, including us - can link a visitor's activity across days
 - Requires no cookie, no `localStorage`, and no consent banner
 
-This is a deliberate tradeoff, not a permanent one: session based features like bounce rate and funnels aren't built yet, because doing them right, figuring out how to group multiple pageviews into one visit without introducing persistent tracking. We're building toward these on the [v0.2 wishlist](#-planned-for-v02--vote-on-what-ships-next) — upvote what you want to see, and we'll be transparent about exactly how we solve it when we do.
+This is a deliberate tradeoff, not a permanent one: session based features like bounce rate and funnels aren't built yet, because doing them right, figuring out how to group multiple pageviews into one visit without introducing persistent tracking. I'm building towards these on the [v0.2 wishlist](#-planned-for-v02--vote-on-what-ships-next) — upvote what you want to see, and I'll be transparent about exactly how I solve it when I do.
 
 ## 🚀 Deploy Your Own Instance
 
@@ -132,7 +132,7 @@ These features are technically feasible but not yet built. Priority is decided b
 - **Funnels & User Journeys**: See the paths visitors take before converting
 - **Revenue Attribution**: Connect traffic sources to actual revenue
 
-Note: some of these (funnels, journeys, revenue attribution) would require a limited form of session tracking beyond our current daily-rotating visitor hash. I'll only build these if there's real demand, and I'll be transparent about any tradeoffs before we do.
+Note: some of these (funnels, journeys, revenue attribution) would require a limited form of session tracking beyond our current daily-rotating visitor hash. I'll only build these if there's real demand, and I'll be transparent about any tradeoffs before  do.
 
 ## 🛠️ Local Development
 
