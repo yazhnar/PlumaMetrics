@@ -11,8 +11,10 @@ Deploy your own free instance in one click, or use our upcoming hosted plan if y
 - **No cookies. No PII.** Fully compliant with privacy expectations by design, not by policy.
 - **Under 5KB tracker script**, won't slow down the sites using it.
 - **Self-hostable for free** using Netlify + Supabase's free tiers.
-- **Clean, modern dashboard** ~ visitors, top pages, referrers, device breakdown, and traffic trends over time.
+- **Clean, modern dashboard** ~ visitors, top pages, referrers, device breakdown, outbound link clicks and traffic trends over time.
 - **Automatic 404 detection**, no setup required.
+- **Real time visitor count**
+- **REST API for programmatic access to stats**
 - **100% open source core**, forever.
 
 ## 🚀 Deploy Your Own Instance
