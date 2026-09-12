@@ -17,6 +17,22 @@ Deploy your own free instance in one click, or use our upcoming hosted plan if y
 - **REST API for programmatic access to stats**
 - **100% open source core**, forever.
 
+## 🆚 PlumaMetrics vs. Plausible vs. Fathom
+
+| | PlumaMetrics | Plausible | Fathom |
+|---|---|---|---|
+| **Price** | Free, self-hosted forever | $9/mo (10K pageviews) | $15/mo (100K pageviews) |
+| **Cookies** | None | None | None |
+| **Open source** | Yes | Yes (self-host option) | No |
+| **Pageview limits** | None (your own infrastructure) | Yes, tiered by plan | Yes, tiered by plan |
+| **404 tracking** | Automatic, built-in | Not built-in | Not built-in |
+| **OS-level device data** | Included | Business plan only | Included |
+| **Real-time visitors** | Included | Included | Included |
+| **Outbound link tracking** | Included | Included | Included |
+| **API access** | Included, free | Included | Included |
+
+**The honest tradeoff:** Plausible and Fathom run fully managed infrastructure with dedicated support, so if you'd rather not manage a server at all, they're worth the price. PlumaMetrics asks a bit more setup effort (a free Netlify + Supabase account) in exchange for zero ongoing cost and full control of your own data. If you'd prefer **a zero setup, fully managed version of PlumaMetrics** instead, [join the waitlist](https://plumametrics.netlify.app) — it launches once there's enough demand.
+
 ## 🚀 Deploy Your Own Instance
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yazhnar/PlumaMetrics)
