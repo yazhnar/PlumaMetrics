@@ -33,6 +33,18 @@ Deploy your own free instance in one click, or use our upcoming hosted plan if y
 
 **The honest tradeoff:** Plausible and Fathom run fully managed infrastructure with dedicated support, so if you'd rather not manage a server at all, they're worth the price. PlumaMetrics asks a bit more setup effort (a free Netlify + Supabase account) in exchange for zero ongoing cost and full control of your own data. If you'd prefer **a zero setup, fully managed version of PlumaMetrics** instead, [join the waitlist](https://plumametrics.netlify.app) — it launches once there's enough demand.
 
+## 🍪 Why No Cookies?
+
+Most analytics tools use cookies or `localStorage` to assign each visitor a persistent ID; That's what lets them count "unique visitors" and track return visits. It's also exactly the mechanism that triggers cookie consent banners under GDPR and similar laws.
+
+PlumaMetrics uses a different approach: each visit is hashed from the visitor's IP address, the site ID, and the current date & then the IP is immediately discarded. The result is a one way hash that:
+
+- Lets us count unique visitors accurately, without storing anything that identifies them
+- Automatically rotates every 24 hours, so no one, including us - can link a visitor's activity across days
+- Requires no cookie, no `localStorage`, and no consent banner
+
+This is a deliberate tradeoff, not a permanent one: session based features like bounce rate and funnels aren't built yet, because doing them right, figuring out how to group multiple pageviews into one visit without introducing persistent tracking. We're building toward these on the [v0.2 wishlist](#-planned-for-v02--vote-on-what-ships-next) — upvote what you want to see, and we'll be transparent about exactly how we solve it when we do.
+
 ## 🚀 Deploy Your Own Instance
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yazhnar/PlumaMetrics)
